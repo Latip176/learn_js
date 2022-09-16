@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Latihan10 - Object Constructor</title>
+</head>
+<body>
+  <script>
+    //contoh menggunakan dictinnory
+    var dataKu = {nama:"Latif Harkat", umur:17}
+    document.write("Nama saya adalah "+dataKu.nama);
+    document.write("<br/>");
+    document.write("Aku berumur "+dataKu.umur+" tahun<br/><br/>");
+    
+    //contoh menggunakan function
+    function data(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    dataKu = new data("latif harkat", 17); //create instance
+    document.write("My name is "+dataKu.name);
+    document.write("<br/>");
+    document.write("I am "+dataKu.age+" years old<br/></br>");
+    
+    //function ubah data add method
+    function ubahData(name, age) {
+      this.name = name;
+      this.age = age;
+      this.changeName = function (name) {
+        this.name = name;
+      }
+    }
+    ubahData = new ubahData("Latif Harkat",17); //default instance
+    document.write("Before change: "+ubahData.name);
+    
+    ubahData.changeName("Oloy"); //change name property
+    document.write("<br/>After change: "+ubahData.name);
+    
+    //call method asual
+    function data(name,age) {
+      this.name = name;
+      this.age = age;
+      this.year = myAge;
+    }
+    function myAge() {
+      return 2022-this.age;
+    }
+    latif = new data("Latif Harkat",17)
+    document.write("<br/><br/>Nama saya: "+latif.name);
+    document.write("<br/>Umur saya: "+latif.age);
+    document.write("<br/>Tahun lahir: "+latif.year());
+  </script>
+</body>
+</html>

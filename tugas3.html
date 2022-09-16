@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tugas3 - Add data</title>
+</head>
+<body>
+  <input type="text" name="data" id="data">
+  <button type="button" onclick="addData()">add data</button>
+  <p id="demo"></p>
+  <script type="text/javascript" charset="utf-8">
+    const data = [];
+    function addData() {
+      const inputData = document.getElementById('data').value;
+      data.push(inputData);
+      document.getElementById('demo').innerHTML = data;
+    }
+  </script>
+</body>
+</html>

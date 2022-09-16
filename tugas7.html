@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tugas6</title>
+  <style>
+    * {
+      max-height: 100%;
+      max-width: 100%;
+    }
+    .arena {
+      height: 75%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+    .user {
+      padding-left: 17px;
+      border: 1px solid black;
+      width: 300px;
+      height: 300px;
+    }
+    #player {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      border: 1px solid black;
+      background: lime;
+    }
+    .stick {
+      text-align: center;
+    }
+    table {
+      margin: auto;
+    }
+    button {
+      background: blue;
+      color: white;
+    }
+    button:focus {
+      background: lime;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="arena">
+    <div class="user">
+      <p id="player"></p>
+    </div>
+  </div>
+  <div class="stick">
+    <table cellpadding="10">
+      <tr>
+        <td rowspan="2"><button onclick="main('kiri')">←</button></td>
+        <td><button onclick="main('atas')">↑</button></td>
+        <td rowspan="2"><button onclick="main('kanan')">→</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="main('bawah')">↓</button></td>
+      </tr>
+    </table>
+  </div>
+  <script>
+    class Main {
+      constructor(player,info,x,y) {
+        this.player = player, this.info = info, this.x = x, this.y = y;
+      }
+    }
+    class controls extends Main {
+      arah(arah) {
+        let speed = this.info.speeds;
+        if(arah==="atas" || arah==="bawah") {
+          let x = this.x;
+          if(arah==="atas") {
+            setInterval(function() {
+              x-=speed;
+              this.player.style.top = x+"px";
+            });
+          } else {
+            setInterval(function() {
+              x += speed;
+              this.player.style.top = x+"px";
+            })
+          }
+          
+        } else {
+          if(arah==="kiri") {
+            this.y -= 2;
+          } else {
+            this.y += 2;
+          }
+        }
+      }
+    }
+    const player = document.getElementById("player");
+    let info = {
+      nama: "Latif Harkat",
+      speeds: 2
+    };
+    const control = new controls(player,info,0,0);
+    function main(arah) {
+      if(arah==="atas") {
+        control.arah("atas");
+      } else if(arah==="bawah") {
+        control.arah("bawah");
+      } else if(arah==="kiri") {
+        control.arah("kiri");
+      } else {
+        control.arah("kanan");
+      }
+    }
+  </script>
+</body>
+</html>

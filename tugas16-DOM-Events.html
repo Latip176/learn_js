@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tugas16 - Events</title>
+</head>
+<body>
+  <button id="name">click me</button>
+  
+  <script>
+    const btn = document.getElementById("name");
+    btn.addEventListener("click", dog); //add evenet listener
+    
+    function dog() {
+      alert("yo're dog!");
+      btn.removeEventListener("click", dog); //remove the event listener
+    }
+  </script>
+</body>
+</html>

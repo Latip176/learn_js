@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Latihan7 - Comparison Operatorsp</title>
+  <script>
+    function br() {
+      document.write("<br/>");
+    }
+  </script>
+</head>
+<body>
+  <!--
+    ==	equal to
+    ===	equal value and equal type
+    !=	not equal
+    !==	not equal value or not equal type
+    >	greater than
+    <	less than
+    >=	greater than or equal to
+    <=	less than or equal to
+    ?	ternary operator
+  -->
+  <script type="text/javascript" charset="utf-8">
+    /*
+      == digunakan untuk nilai yang sama, tapi tidak dengan type data nya. Contohnya :
+        5=="5"
+        Output : True.
+    */
+    var a,b;
+    a = 5; //integer
+    b = "5"; //string
+    document.write(a==b);
+    
+    br();
+    
+    /*
+      === digunakan untuk nilai yang sama, dan juga type data yang sama. Contohnya :
+      5===5
+      Output : True
+      
+      5==="5"
+      Output : False
+    */
+    var a,b;
+    a = 5; //integer
+    b = 5; //integer
+    document.write(a===b);
+    
+    br();
+    
+    /*
+      != digunakan untuk tidak sama dengan, hanya nilainya saja tidak dengan type data nya. Contoh :
+      5!="5"
+      Output : False
+    */
+    var a,b;
+    a = 5;
+    b = "5";
+    document.write(a!=b);
+    
+    br();
+    
+    /*
+      !== digunakan untuk tidak sama dengan, dengan type datanya. Contoh :
+      5!==5
+      Output : False
+      
+      5!=="5"
+      Output : True
+    */
+    var a,b;
+    a = 5;
+    b = 5;
+    document.write(a!==b);
+  </script>
+</body>
+</html>

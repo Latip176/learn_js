@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Latihan6 - Const Objek & Array</title>
+</head>
+<body>
+  
+  <h2>Array :</h2>
+  <!-- aray -->
+  <script type="text/javascript" charset="utf-8">
+    //create an array
+    const buah = ["apel","mangga","manggis"];
+    document.write(buah);
+    /*
+      Output : apel,mangga,manggis
+    */
+    
+    //change an element
+    buah[0] = "pisang"; //change element index 0
+    document.write("<br/>"+buah);
+    /*
+      Output : pisang,mangga,manggis
+    */
+    
+    //add data to array
+    buah.push("jeruk");
+    document.write("<br/>"+buah);
+    /*
+      Output : pisang,mangga,manggis,jeruk
+    */
+  </script>
+  <!-- end array -->
+  
+  <h2>Objects :</h2>
+  <!-- Objects -->
+  <script type="text/javascript" charset="utf-8">
+    const data = {type:"20",nama:"toyota",owner:"latif"};
+    document.write("Nama : "+data.nama+"<br/>"+"Type : "+data.type+"<br/>"+"Owner : "+data.owner);
+    /*
+    //change property
+    data.nama = "avanza";
+    
+    //add property
+    data.tes = "hayuu";
+    */
+  </script>
+  <!-- end Objects -->
+  
+</body>
+</html>

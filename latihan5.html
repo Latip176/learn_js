@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Latihan5 - Js variable</title>
+</head>
+<body>
+  <p id="let"></p>
+  <p id="error"></p>
+  <p id="var"></p>
+  <p id="const"></p>
+  
+  <!-- let -->
+  <script type="text/javascript">
+    /*
+      let a = 5;
+      let a;
+      Output: SyntaxError: 'x' has already been declared
+      
+      Variables defined with let cannot be redeclared, tidak bisa membuat 2 nama variable yg sama jika menggunakan let.
+    */
+    let a,b;
+    a = 5 + 2;
+    b = a * 10;
+    document.getElementById('let').innerHTML = b;
+    
+    //try except
+    try {
+      name = "Latif Harkat";
+      let name;
+    } catch(err) {
+      document.getElementById('error').innerHTML = err;
+    }
+  </script>
+  <!-- end let -->
+  
+  <!-- var -->
+  <script type="text/javascript">
+    var x,y;
+    x = 5+2;
+    y = x*10;
+    document.getElementById('var').innerHTML = y;
+  </script>
+  <!-- end var -->
+  
+  <!-- const -->
+  <script type="text/javascript" charset="utf-8">
+    const l = 7;
+    const m = 10;
+    const hasil = l*m;
+    document.getElementById('const').innerHTML = hasil;
+    /*
+      const harus diisi nilai saat di d3klarasi. contoh :
+      const a = 5;
+      document.getElementById('demo').innerHTML = a;
+      Output : 5
+      
+      const a;
+      a = 5;
+      Output : Error
+    */
+  </script>
+  <!-- end const -->
+</body>
+</html>

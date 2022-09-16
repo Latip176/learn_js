@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tugas5 - Interval</title>
+  <style>
+    #player {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      background: blue;
+    }
+    .stick {
+      text-align: center;
+    }
+    button:focus {
+      background: blue;
+      color: white;
+    }
+    .nama {
+      line-height: 100px;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="player"><p class="nama" id="nama"></p></div>
+  <div class="stick">
+    <button onclick="main('kiri')">←</button>
+    <button onclick="main('atas')">↑</button>
+    <button onclick="main('bawah')">↓</button>
+    <button onclick="main('kanan')">→</button>
+  </div>
+  
+  <script>
+    //user
+    const user = document.getElementById("player");
+    const nama = document.getElementById("nama");
+    let infoPlayer = {
+      name: "Latif Harkat",
+      speed: 10,
+      tambahSpeed() {
+        this.speed -= 1;
+      }
+    };
+    nama.innerHTML = infoPlayer.name;
+    //position stick
+    let kananS = 0;
+    let atasS = 0;
+    let bawahS = 0;
+    let kiriS = 0;
+    
+    /*
+      function tambahSpeed() {
+        infoPlayer.tambahSpeed();
+      }
+    */
+
+    function kiri() {
+      kiriS += 1;
+      user.style.right = kiriS+"px";
+    }
+    function atas() {
+      atasS += 1;
+      user.style.bottom = atasS+"px";
+    }
+    function bawah() {
+      bawahS += 1;
+      user.style.top = bawahS+"px";
+    }
+    function kanan() {
+      kananS += 1;
+      user.style.left = kananS+"px";
+    }
+    
+    function stop() {
+      if(frame==5) {
+        clearInterval(inter)
+        frame -= 5;
+      }
+    }
+    
+    function main(stick) {
+      switch (stick) {
+        case "atas":
+          inter = setInterval(atas, infoPlayer.speed);
+          break;
+        case "bawah":
+          inter = setInterval(bawah, infoPlayer.speed);
+          break;
+        case "kiri":
+          inter = setInterval(kiri, infoPlayer.speed);
+          break;
+        case "kanan":
+          inter = setInterval(kanan, infoPlayer.speed);
+          break;
+      }
+    }
+  </script>
+</body>
+</html>

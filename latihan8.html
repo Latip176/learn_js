@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Latihan8 - Function</title>
+</head>
+<body>
+  <p id="demo"></p>
+  <script type="text/javascript" charset="utf-8">
+    /*
+      function myFunction(a, b) {
+        return a * b;
+      }
+      document.getElementById('demo').innerHTML = myFunction(5,5);
+    */
+    
+    //farenhaite to celcius
+    document.getElementById('demo').innerHTML = toCelcius(70);
+    function toCelcius(f) {
+      return (5/9) * (f-32);
+    }
+    
+    /*
+      Masih bisa berjalan walau function ada di bawah pemanggilan.
+    */
+  </script>
+</body>
+</html>

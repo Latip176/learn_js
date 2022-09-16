@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tugas6</title>
+  <style>
+    * {
+      max-height: 100%;
+      max-width: 100%;
+    }
+    .arena {
+      height: 400px;
+      width: 500px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+    .user {
+      padding-left: 17px;
+      border: 1px solid black;
+      width: 300px;
+      height: 300px;
+    }
+    #player {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      border: 1px solid black;
+      background: lime;
+    }
+    .stick {
+      text-align: center;
+    }
+    table {
+      margin: auto;
+    }
+    button {
+      background: blue;
+      color: white;
+    }
+    button:focus {
+      background: lime;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <!-- <h1 align="center" id="nyawa"></h1> -->
+  <div class="arena">
+    <div class="user">
+      <p id="player"></p>
+    </div>
+  </div>
+  <div class="stick">
+    <table cellpadding="10">
+      <tr>
+        <td rowspan="2"><button onclick="main('kiri')">←</button></td>
+        <td><button onclick="main('atas')">↑</button></td>
+        <td rowspan="2"><button onclick="main('kanan')">→</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="main('bawah')">↓</button></td>
+      </tr>
+      <tr>
+        <td colspan="3"><button onclick="main('reset')">RESET</button></td>
+      </tr>
+    </table>
+  </div>
+  <script>
+    const player = document.getElementById("player");
+    //const nyawaa = document.getElementById("nyawa");
+    
+    let x = 0, z = 0;
+    //let nyawa = 1;
+    function main(arah) {
+      if(arah==="atas" || arah==="bawah") {
+        if(arah==="atas") {
+          atas = setInterval(function() {
+            x -= 2;
+            player.style.top = x+"px";
+            if(x === -10) {
+              x = 250;
+              //nyawa -= 1;
+              //player.style.top = 250+"px";
+            }
+          },10);
+        } else {
+          bawah = setInterval(function() {
+            x += 2;
+            player.style.top = x+"px";
+            if(x > 250) {
+              x = 0;
+              //nyawa -= 1;
+              //player.style.top = -10+"px";
+            }
+          },10);
+        }
+        if(atas > bawah) {
+          clearInterval(bawah);
+        } else {
+          clearInterval(atas);
+        }
+ 
+      } else if(arah==="kiri" || arah==="kanan") {
+        if(arah==="kiri") {
+          kiri = setInterval(function() {
+            z -= 2;
+            player.style.left = z+"px";
+            if(z < -10) {
+              z = 250;
+              //nyawa -= 1;
+              //player.style.left = 250+"px";
+            }
+          },10);
+        } else {
+          kanan = setInterval(function() {
+            z += 2;
+            player.style.left = z+"px";
+            if(z > 250) {
+              z = 0;
+              //nyawa -= 1;
+
+              //player.style.left = -10+"px";
+            }
+          }, 10);
+        }
+        if(kiri > kanan) {
+          clearInterval(kanan);
+        } else {
+          clearInterval(kiri);
+        }
+      }
+      if (nyawa===0) {
+        alert("kamu mati ajg")
+        try {
+          clearInterval(kiri);
+        } catch (error) {
+          console.log(error);
+        }
+        try {
+          clearInterval(kanan);
+        } catch (error) {
+          console.log(error);
+        }
+        try {
+          clearInterval(atas);
+        } catch (error) {
+          console.log(error);
+        }
+        try {
+          clearInterval(bawah);
+        } catch (error) {
+          console.log(error);
+        }
+        x = 0;
+        z = 0;
+        player.style.top = x+"px";
+        player.style.left = z+"px";
+      }
+    }
+  </script>
+</body>
+</html>

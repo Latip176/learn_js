@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Latihan13 - DOM Selecting Elements</title>
+</head>
+<body>
+  <p class="tes" id="tes"></p> <!-- object -->
+  <script>
+  
+    //by id
+    const selectId = document.getElementById("tes");
+    
+    //by className
+    const selectClass = document.getElementsByClassName("tes");
+    
+    //by tag name
+    const selectTag = document.getElementsByTagName("p");
+    
+    //innerHTML property
+    selectId.innerHTML = "Hello World!"; //change
+    
+    /* other property
+      Each element in the DOM has a set of properties and methods that provide information about their relationships in the DOM:
+      element.childNodes returns an array of an element's child nodes.
+      element.firstChild returns the first child node of an element.
+      element.lastChild returns the last child node of an element.
+      element.hasChildNodes returns true if an element has any child nodes, otherwise false.
+      element.nextSibling returns the next node at the same tree level.
+      element.previousSibling returns the previous node at the same tree level.
+      element.parentNode returns the parent node of an element.
+      
+      We can, for example, select all child nodes of an element and change their content:
+    */
+  </script>
+</body>
+</html>

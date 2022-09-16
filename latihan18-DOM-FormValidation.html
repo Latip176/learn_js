@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Latihan18 - Form Validation</title>
+  <style>
+    input {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <form onsubmit="return cek();">
+    User : <input type="text" name="user" id="user">
+    Pass : <input type="password" name="pass" id="pass">
+    <input type="submit" value="login">
+  </form>
+  <script>
+    function cek() {
+      const user = document.getElementById("user").value;
+      const pass = document.getElementById("pass").value;
+      if(user!=="" && pass!=="") {
+        if(user==="admin" && pass==="latip") {
+          alert("Login Success!");
+        } else {
+          alert("username atau password salah!");
+        }
+      } else {
+        alert("isi form nya kontol!");
+      }
+    }
+  </script>
+</body>
+</html>

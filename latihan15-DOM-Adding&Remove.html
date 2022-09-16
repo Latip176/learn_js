@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Latihan15 - DOM Adding and Remove</title>
+</head>
+<body>
+  <div id="demo">
+    <p id="demo2"></p>
+  </div>
+  <script>
+    //create a new paragraph
+    var p = document.createElement("p");
+    var text = document.createTextNode("Ini adalah text Node");
+    p.appendChild(text); //add text node
+    
+    //memasang text node paragraph ke div
+    var div = document.getElementById("demo");
+    div.appendChild(p); //output : Ini adalah text node
+    
+    /* remove child node
+      div.removeChild(p); //remove text node
+      //debug
+      console.log(div); // output : null
+    */
+    
+    //replace node
+    var child = document.getElementById("demo2");
+    div.replaceChild(p, child); //replace div to text demo2
+  </script>
+</body>
+</html>

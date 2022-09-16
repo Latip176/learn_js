@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tugas4 - SetintervalXDate</title>
+</head>
+<body>
+  <p id="waktu"></p>
+  <script>
+    const waktuProperty = document.getElementById("waktu");
+    const waktu = new Date();
+    
+    //hours
+    const hours = waktu.getHours();
+    
+    //minutes
+    const minutes = waktu.getMinutes();
+    
+    //seconds
+    const seconds = waktu.getSeconds();
+    
+    setInterval(function() {
+      const waktu = new Date();
+      waktuProperty.innerHTML = waktu.toLocaleTimeString();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Latihan17 - Image Slider</title>
+</head>
+<body>
+  <div>
+    <button onclick="prev()">Prev</button>
+    <img src="img/on.gif" alt="gambar" id="gambar" />
+    <button onclick="next()">Next</button>
+    
+    <script>
+      var images = ["img/on.gif","img/off.gif"];
+      let num = 0;
+      
+      function next() {
+        const slider = document.getElementById('gambar');
+        num++;
+        if(num>=images.length){
+          num = 0;
+        }
+        slider.src = images[num];
+      }
+      function prev() {
+        const slider = document.getElementById('gambar');
+        num--;
+        if(num < 0) {
+          num = images.length-1;
+        }
+        slider.src = images[num];
+      }
+    </script>
+  </div>
+</body>
+</html>
